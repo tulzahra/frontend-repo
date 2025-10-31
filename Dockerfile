@@ -1,12 +1,14 @@
-# Step 1: Use Python base image
+
+# Use Python base image
 FROM python:3.9
 
-# Step 2: Set working directory
+# Set working directory inside container
 WORKDIR /app
 
-# Step 3: Copy frontend code
-COPY . .
+# Copy only the required files
+COPY app.py .
+COPY README.md .
 
-# Step 4: Run Python file
+# Define default command
 CMD ["python3", "app.py"]
 
